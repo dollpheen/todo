@@ -1,0 +1,25 @@
+<style>
+    *{box-sizing:border-box}body{height:100vh;background-color:#e6e6e6;display:flex;align-items:center;justify-content:center}.form{width:95%;height:95%;padding-top:60px;background-color:#e6e6e6;border:#fff 3px solid;border-radius:0 50px 0 50px;box-shadow:15px 15px 20px 5px rgba(119,119,119,0.3),-15px -15px 20px 5px rgba(255,255,255,0.8),inset 5px 5px 20px 5px rgba(119,119,119,0.3),inset -15px -15px 20px 5px rgba(255,255,255,0.8)}.top-text,.username,.password,.submit{display:block;text-align:center;margin-left:auto;margin-right:auto;outline:none}.top-text{font-size:80px}.username,.password{font-size:12px;margin-top:1%;padding:0.7%;background-color:#e9e7e7;width:10%;border-radius:10%;border:solid 3px #fff;box-shadow:inset 10px 10px 20px 0 rgba(119,119,119,0.3),inset -10px -10px 20px 0 rgba(255,255,255,0.8),15px 15px 20px 5px rgba(240, 240, 240, 0.3),-15px -15px 20px 5px rgba(255,255,255,0.8);text-align:left}.submit{font-family:Verdana,Geneva,Tahoma,sans-serif;font-size:10px;padding:1%;margin-top:0.5%;background-color:#e9e7e7;transition:.5s;border:solid 3px rgba(255,255,255,0);border-radius:30px;color:#000;text-shadow:0 0 1px #444}.submit:hover{border:solid 3px #fff;box-shadow:15px 15px 20px 5px rgba(119,119,119,0.3),-15px -15px 20px 5px rgba(255,255,255,0.8)}
+</style>
+
+<body class="container">
+    <div class="form">    
+    <h1 style="color:rgb(0, 0, 0);text-align: center;text-shadow:1px 2px rgb(49, 49, 49);">Your todo</h1>
+    <ol style="text-align: center;">
+        {% for at in todo %}
+        <li class="list">{{ at }} </li>
+        {% endfor %}
+    </ol><br>
+    <form action="/todolist/{{code}}0" method="post" >
+	{% csrf_token %}
+        <input type="text" name="to_add" placeholder="Label to Add" class="username" autofocus >
+        <input type="submit" class="submit" value="Add">
+    </form>
+    <form action="/todolist/{{code}}1" method="post" >
+        {% csrf_token %}
+        <input type="text" name="delete" placeholder="Field number to delete" class="username", >
+        <input type="submit" class="submit" value="Delete">
+    </form>
+</div>
+
+</body>

@@ -1,0 +1,21 @@
+<style>
+    *{box-sizing:border-box}body{height:100vh;background-color:#e6e6e6;display:flex;align-items:center;justify-content:center}.form{width:420px;height:520px;padding-top:60px;background-color:#e6e6e6;border:#fff 3px solid;border-radius:0 50px 0 50px;box-shadow:15px 15px 20px 5px rgba(119,119,119,0.3),-15px -15px 20px 5px rgba(255,255,255,0.8),inset 5px 5px 20px 5px rgba(119,119,119,0.3),inset -15px -15px 20px 5px rgba(255,255,255,0.8)}.top-text,.username,.password,.submit{display:block;text-align:center;margin-left:auto;margin-right:auto;outline:none}.top-text{font-size:80px}.username,.password{font-size:15px;margin-top:50px;padding:15px;background-color:#e9e7e7;width:350px;border-radius:30px;border:solid 3px #fff;box-shadow:inset 10px 10px 20px 0 rgba(119,119,119,0.3),inset -10px -10px 20px 0 rgba(255,255,255,0.8),15px 15px 20px 5px rgba(119,119,119,0.3),-15px -15px 20px 5px rgba(255,255,255,0.8);text-align:left}.submit{font-family:Verdana,Geneva,Tahoma,sans-serif;font-size:20px;padding:8px 15px;margin-top:50px;background-color:#e9e7e7;transition:.5s;border:solid 3px rgba(255,255,255,0);border-radius:30px;color:#000;text-shadow:0 0 1px #444}.submit:hover{border:solid 3px #fff;box-shadow:15px 15px 20px 5px rgba(119,119,119,0.3),-15px -15px 20px 5px rgba(255,255,255,0.8)}
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Todo Login</title>
+</head>
+<body>
+    <div class="container">
+        <form action="/todolist" class="form" method="post">
+            <span class="top-text">Login</span>
+	        {% csrf_token %}
+            <input type="password" name="code" placeholder="Code" class="username" autofocus>
+            <input type="submit" class="submit" value="Submit"><br><br>
+            <p style="text-align: center;">Dont have a code click<a href="create"> here</a></p>
+        </form>
+    </div>
+</body>
+</html>
+
